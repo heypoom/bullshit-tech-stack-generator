@@ -38,9 +38,11 @@ function App() {
           </div>
         </Suspense>
 
-        <Suspense>
-          <StackList />
-          <PackageList />
+        <Suspense fallback={<div className="min-h-[200px]" />}>
+          <div className="min-h-[200px]">
+            <StackList />
+            <PackageList />
+          </div>
         </Suspense>
       </div>
     </div>

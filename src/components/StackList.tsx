@@ -2,6 +2,7 @@ import {useAtom} from 'jotai'
 import {motion} from 'framer-motion'
 
 import {bullshitStackAtom, stackNameAtom} from '../atoms'
+import {Suspense} from 'react'
 
 export function StackList() {
   const [stackName] = useAtom(stackNameAtom)
