@@ -11,14 +11,14 @@ export function StackList() {
 
   return (
     <div>
-      <div className="text-2xl px-6 py-3 border-2 rounded-xl border-slate-600">
-        <motion.span className="text-slate-300">pnpm install </motion.span>
+      <div className="text-2xl px-6 py-3 border-2 rounded-xl border-slate-600 font-mono">
+        <span className="text-slate-300">pnpm install </span>
 
         {packages.map((name, pkgIndex) => {
           let found = false
 
           return (
-            <motion.span key={pkgIndex}>
+            <span key={pkgIndex}>
               {name.split('').map((char, charIndex) => {
                 if (!found && stackName?.[pkgIndex] === char) {
                   found = true
@@ -37,7 +37,7 @@ export function StackList() {
                 )
               })}
               &nbsp;
-            </motion.span>
+            </span>
           )
         })}
       </div>

@@ -16,7 +16,9 @@ function App() {
   return (
     <div className="min-h-[100vh] flex flex-col items-center justify-center mx-6">
       <div className="max-w-5xl mx-auto my-5 space-y-8 w-full">
-        <h1 className="text-4xl">Bullshit tech stack generator 🤪</h1>
+        <h1 className="text-4xl text-yellow-300">
+          Bullshit tech stack generator 🤪
+        </h1>
 
         <Suspense>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-y-6">
