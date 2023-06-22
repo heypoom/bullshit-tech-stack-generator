@@ -2,7 +2,6 @@ import {useAtom} from 'jotai'
 import {motion} from 'framer-motion'
 
 import {bullshitStackAtom, stackNameAtom} from '../atoms'
-import {Suspense} from 'react'
 
 export function StackList() {
   const [stackName] = useAtom(stackNameAtom)
@@ -21,7 +20,7 @@ export function StackList() {
           return (
             <span key={pkgIndex}>
               {name.split('').map((char, charIndex) => {
-                if (!found && stackName?.[pkgIndex] === char) {
+                if (!found && stackName.toLowerCase()?.[pkgIndex] === char) {
                   found = true
 
                   return (
