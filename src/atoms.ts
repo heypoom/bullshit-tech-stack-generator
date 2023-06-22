@@ -10,7 +10,6 @@ export const searchQueryAtom = atom<string | null>(null)
 
 const getNodePackagesDebounced = asyncDebounce(getNodePackages, 500)
 
-// TODO: debounce properly
 export const packagesAtom = atomWithCache(async (get) => {
   return getNodePackagesDebounced(get(searchQueryAtom))
 })
