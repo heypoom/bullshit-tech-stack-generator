@@ -20,7 +20,11 @@ export async function getNodePackages(
 
 const clean = (word: string) => word.replace(/@\w+\//g, '')
 
-export function generateTechStack(target: string, pkgs: string[]): string[] {
+export function generateTechStack(
+  target: string,
+  pkgs: string[],
+  options?: {fuzzy?: boolean}
+): string[] {
   const result: string[] = []
   const words = [...pkgs]
 
@@ -28,8 +32,10 @@ export function generateTechStack(target: string, pkgs: string[]): string[] {
     // Try to find perfect matches first.
     let i = words.findIndex((w) => clean(w).startsWith(char))
 
-    // Else, opt for fuzzy-searching.
-    if (i === -1) i = words.findIndex((w) => clean(w).includes(char))
+    // Otherwise, opt for fuzzy-searching.
+    if (options?.fuzzy !== false) {
+      if (i === -1) i = words.findIndex((w) => clean(w).includes(char))
+    }
 
     // Otherwise, returns an empty array.
     if (i === -1) return []
