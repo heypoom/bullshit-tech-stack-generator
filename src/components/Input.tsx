@@ -11,11 +11,11 @@ export const Input = (props: Props) => {
 
   return (
     <div className="space-y-2">
-      {label && <div className="text-2xl">{label}</div>}
+      {label && <div className="text-xl">{label}</div>}
 
       <input
         placeholder={placeholder || label}
-        className={`text-3xl bg-slate-300 text-slate-700 px-5 py-1 rounded-full ${className}`}
+        className={`text-3xl bg-slate-300 text-pink-500 px-5 py-1 rounded-full ${className}`}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

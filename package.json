@@ -1,5 +1,5 @@
 {
-  "name": "bullshit-tech-stack-generator",
+  "name": "bullshit-tech-stack-generatornpm i -D daisyui@latest",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^10.12.16",
     "jotai": "^2.1.0",
     "jotai-cache": "^0.3.0",
     "lodash": "^4.17.21",

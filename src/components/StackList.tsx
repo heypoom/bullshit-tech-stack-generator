@@ -1,4 +1,5 @@
 import {useAtom} from 'jotai'
+import {motion} from 'framer-motion'
 
 import {bullshitStackAtom, stackNameAtom} from '../atoms'
 
@@ -10,14 +11,14 @@ export function StackList() {
 
   return (
     <div>
-      <code className="text-2xl">
-        <span className="text-slate-300">pnpm install </span>
+      <div className="text-2xl px-6 py-3 border-2 rounded-xl border-slate-600">
+        <motion.span className="text-slate-300">pnpm install </motion.span>
 
         {packages.map((name, pkgIndex) => {
           let found = false
 
           return (
-            <span key={pkgIndex}>
+            <motion.span key={pkgIndex}>
               {name.split('').map((char, charIndex) => {
                 if (!found && stackName?.[pkgIndex] === char) {
                   found = true
@@ -36,10 +37,10 @@ export function StackList() {
                 )
               })}
               &nbsp;
-            </span>
+            </motion.span>
           )
         })}
-      </code>
+      </div>
     </div>
   )
 }

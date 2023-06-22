@@ -14,22 +14,21 @@ function App() {
   const [stackName, setStackName] = useAtom(stackNameAtom)
 
   return (
-    <div className="min-h-[100vh] flex flex-col items-center justify-center">
-      <div className="max-w-5xl mx-auto my-5 space-y-4 w-full">
+    <div className="min-h-[100vh] flex flex-col items-center justify-center mx-6">
+      <div className="max-w-5xl mx-auto my-5 space-y-8 w-full">
         <h1 className="text-4xl">Bullshit tech stack generator 🤪</h1>
 
         <Suspense>
-          <div className="space-y-4">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-y-6">
             <Input
-              label="Name your text stack ✍🏻"
+              label="name your text stack ✍🏻"
               placeholder="bullshit"
               value={stackName}
               onChange={setStackName}
-              className="uppercase"
             />
 
             <Input
-              label="NPM Criteria"
+              label="filter specific packages from npm"
               value={query ?? ''}
               onChange={setQuery}
               placeholder="author:saltyaom"
