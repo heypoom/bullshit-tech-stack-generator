@@ -2,3 +2,4 @@
 
 Generates bullshit tech stack out of any word.
 
+![Screenshot](docs/images/sample.png)
