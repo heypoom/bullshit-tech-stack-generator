@@ -39,7 +39,7 @@ function App() {
         </Suspense>
 
         <Suspense fallback={<div className="min-h-[200px]" />}>
-          <div className="min-h-[200px]">
+          <div className="min-h-[200px] space-y-2">
             <StackList />
             <PackageList />
           </div>
