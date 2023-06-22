@@ -33,7 +33,7 @@ function App() {
               label="filter specific packages from npm"
               value={query ?? ''}
               onChange={setQuery}
-              placeholder="author:saltyaom"
+              placeholder="keywords:vue"
             />
           </div>
         </Suspense>
