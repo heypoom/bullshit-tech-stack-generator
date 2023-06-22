@@ -1,5 +1,4 @@
 import {useAtom} from 'jotai'
-import {motion} from 'framer-motion'
 
 import {bullshitStackAtom, stackNameAtom} from '../atoms'
 
@@ -15,14 +14,16 @@ export function StackList() {
         <span className="text-slate-300">pnpm install </span>
 
         {packages.map((name, pkgIndex) => {
-          let found = false
+          // TODO: write unit tests for the highlighting logic!
+          const letter = stackName.toLowerCase()?.[pkgIndex]
+          const orgMatch = name.match(/@\w+/g)
+          const searchFrom = orgMatch ? orgMatch[0].length : 0
+          const targetIndex = name.indexOf(letter, searchFrom)
 
           return (
             <span key={pkgIndex}>
               {name.split('').map((char, charIndex) => {
-                if (!found && stackName.toLowerCase()?.[pkgIndex] === char) {
-                  found = true
-
+                if (targetIndex === charIndex) {
                   return (
                     <span key={charIndex}>
                       <b>{char}</b>
