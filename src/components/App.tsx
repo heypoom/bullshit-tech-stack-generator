@@ -23,7 +23,7 @@ function App() {
         <Suspense>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-y-6">
             <Input
-              label="name your text stack ✍🏻"
+              label="name your tech stack ✍🏻"
               placeholder="bullshit"
               value={stackName}
               onChange={setStackName}
