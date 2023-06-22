@@ -6,7 +6,7 @@ interface PackageResult {
 export async function getNodePackages(
   query?: string | null
 ): Promise<string[]> {
-  const endpoint = `https://registry.npmjs.org/-/v1/search?size=250&text=${
+  const endpoint = `https://registry.npmjs.org/-/v1/search?size=250&popularity=1.0&quality=0.5&text=${
     query || '%22%22'
   }`
 
